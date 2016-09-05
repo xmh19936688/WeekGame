@@ -1,22 +1,19 @@
-#����
-����A,B�����ַ��������е��ַ�ȫ����СдӢ����ĸ����a -> z�����ж��ܷ�ֻʹ��A���е��ַ�ƴ��B����A���е�ÿ���ַ�ֻ׼ʹ��һ�Ρ�
->���磺
+#问题
+给定A,B两个字符串，串中的字符全都是小写英文字母（即a -> z）。判断能否只使用A串中的字符拼出B串，A串中的每个字符只准使用一次。
+>例如：
 >A = "aaab"    B = "aaa"     true
 >A = "aabb"    B= "aaa"      false
 >A = "aaab"    B = "abaa"   true
 >A = "aaab"    B = "aaac"   false
 
-����ԭ�ͣ�
-bool canConstruct(const char* A, const char* B)
-{
+函数原型：
+bool canConstruct(const char* A, const char* B){}
 
-}
+#思路
+使用一个数组来记录a中每个字母出现的次数，再比较b中每个字母出现的次数，如果后者大，则false
+优化：遍历a的时候，对应元素加1，遍历b的时候，对应元素减1，如果出现负数，则返回false
 
-#˼·
-ʹ��һ����������¼a��ÿ����ĸ���ֵĴ������ٱȽ�b��ÿ����ĸ���ֵĴ�����������ߴ���false
-�Ż�������a��ʱ�򣬶�ӦԪ�ؼ�1������b��ʱ�򣬶�ӦԪ�ؼ�1��������ָ������򷵻�false
-
-#����
+#代码
 ```
 #include<stdio.h>
 #include<string.h>
