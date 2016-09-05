@@ -1,13 +1,14 @@
 #问题
 给定A,B两个字符串，串中的字符全都是小写英文字母（即a -> z）。判断能否只使用A串中的字符拼出B串，A串中的每个字符只准使用一次。
 >例如：
->A = "aaab"    B = "aaa"     true
->A = "aabb"    B= "aaa"      false
->A = "aaab"    B = "abaa"   true
->A = "aaab"    B = "aaac"   false
+```
+A = "aaab"    B = "aaa"     true
+A = "aabb"    B= "aaa"      false
+A = "aaab"    B = "abaa"   true
+A = "aaab"    B = "aaac"   false
+```
 
-函数原型：
-bool canConstruct(const char* A, const char* B){}
+函数原型：`bool canConstruct(const char* A, const char* B){}`
 
 #思路
 使用一个数组来记录a中每个字母出现的次数，再比较b中每个字母出现的次数，如果后者大，则false
