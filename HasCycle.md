@@ -1,20 +1,21 @@
-#����
-����һ�������������ж������Ƿ��л����������������ʽ��
-A -> B -> C -> D -> E -> F -> G -> H -> I -> D(ָ��ǰ���D�����л�)
-������㶨�壺
+#问题
+给定一个单向链表，判断其中是否有环，即类似下面的形式：
+>A -> B -> C -> D -> E -> F -> G -> H -> I -> D(指向前面的D，即有环)
+
+链表结点定义：
+```
 struct ListNode
 {
-    ListNode* next;
+    ListNode* next; 
 }
-����ԭ�ͣ�
-bool hasCycle( const ListNode* head )
-{
-}
+```
 
-#˼·
-����Ϊ�ٳ��ܲ���һ�����ܵĿ죬һ�����ܵ���������ǻ��Σ���Ļᳬ������
+函数原型：`bool hasCycle( const ListNode* head ){}`
 
-#����
+#思路
+抽象为操场跑步，一个人跑的快，一个人跑的慢，如果是环形，快的会超过慢的
+
+#代码
 ```
 #include<stdio.h>
 #include<string.h>
@@ -36,8 +37,8 @@ void main(){
         p->next=(Node*)malloc(sizeof(Node));
         p=p->next;
     }
-    //p->next=0;//�޻�
-    p->next=back;//�л�
+    //p->next=0;//无环
+    p->next=back;//有环
     
 	int result=hasCycle(H);
 	printf("%d\n",result);
@@ -45,11 +46,11 @@ void main(){
 
 int hasCycle(const Node *p)  
 {  
-    Node * slow = p; // �������� ÿ��ǰ��һ���ڵ�  
-    Node * fast = p; // �����Ŀ죬ÿ��ǰ�������ڵ�  
+    Node * slow = p; // 遍历的慢 每次前进一个节点  
+    Node * fast = p; // 遍历的快，每次前进二个节点  
     if(fast != NULL)  
     {  
-        fast = fast ->next; //��fast����һ��  
+        fast = fast ->next; //让fast先走一步  
     }  
     while (fast&& fast->next)  
     {  
