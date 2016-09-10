@@ -11,4 +11,4 @@ a = "acb"   b = “aabbcc”    false
 a = "abd"   b = “aabbcc”    false
 ```
 
-函数原型：`double myPow( double x, int n ){}`
+函数原型：`bool isSubsequence(const char* a, const char* b) {}`
