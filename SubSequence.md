@@ -12,3 +12,35 @@ a = "abd"   b = “aabbcc”    false
 ```
 
 函数原型：`bool isSubsequence(const char* a, const char* b) {}`
+
+#思路
+ 这个比较简单，不说了
+
+#代码
+```
+//go
+package main
+
+import "fmt"
+
+func main() {
+   result:=isSubsequence("abc","abbcc")
+   fmt.Printf("%t\n",result)
+}
+
+func isSubsequence(a string,b string)(bool){
+    al:=len(a)
+    bl:=len(b)
+    i:=0
+    j:=0
+    for i<al && j<bl {
+        if a[i]==b[j] {
+            i++
+            j++
+        }else{
+            j++
+        }
+    }
+    return i==al;
+}
+```
